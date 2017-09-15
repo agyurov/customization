@@ -1,0 +1,54 @@
+[
+	{ "keys": ["ctrl+shift+t"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+shift+r"], "command": "toggle_comment", "args": { "block": true } },
+	{ "keys": ["alt+1"], "command": "focus_group", "args": { "group": 0 } },
+	{ "keys": ["alt+2"], "command": "focus_group", "args": { "group": 1 } },
+	{ "keys": ["f1"], "command": "build" },
+	{ "keys": ["f2"], "command": "hide_panel", "args": {"panel": "output.exec"} },
+    // fesfesfes
+	{ "keys": ["alt+4"], "command": "repl_open",
+    	"args": {
+        "type": "subprocess",
+        "encoding": "utf8",
+        "cmd": ["python", "-i", "-u"],
+        "cwd": "$file_path",
+        "syntax": "Packages/Python/Python.tmLanguage",
+        "external_id": "python",
+        "extend_env": {"PYTHONIOENCODING": "utf-8"}
+    	}
+ 	},
+    // fesfesfes
+    { "keys": ["alt+3"], "command": "repl_open",
+        "args": {
+        "type": "subprocess",
+        "encoding": "$win_cmd_encoding",
+        "cmd": ["cmd.exe"],
+        "cwd": "$file_path",
+        "syntax": "Packages/Text/Plain text.tmLanguage",
+        "external_id": "shell",
+        "extend_env": {"PYTHONIOENCODING": "utf-8"}
+        }
+    },
+    // fesfesfes
+    { "keys": ["f3"], "command": "set_layout", "args": 
+        {
+        "cols": [0.0, 1.0],
+        "rows": [0.0, 1.0],
+        "cells": [[0, 0, 1, 1]]
+        }
+    },
+    // fesfesfes
+    {"keys": ["f4"], "command": "set_layout", "args":
+        {
+            "cols": [0.0, 0.5, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+        }
+    },
+    // fefesfes
+    { "keys": ["alt+enter"], "command": "repl_transfer_current", "args": {"scope": "selection"}, "context":
+        [
+        { "key": "selector", "operator": "equal", "operand": "source.python", "match_all": true }
+        ]
+    }
+]
